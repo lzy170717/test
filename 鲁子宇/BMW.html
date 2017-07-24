@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<canvas id="canvas" width="800" height="600"></canvas>
+		<script type="text/javascript">
+			function Page() {
+				this.canvas = document.getElementById("canvas");
+				this.ctx = this.canvas.getContext("2d");
+			}
+
+			Object.assign(Page.prototype, {
+				init: function() {
+					this.drawArc();
+					this.textNum();
+				},
+
+				drawArc: function() {
+					this.ctx.save()
+					this.ctx.translate(150, 150);
+					this.ctx.arc(200, 200, 220, 0, Math.PI * 2);
+					this.ctx.fillStyle = "#ccc";
+					this.ctx.fill();
+					this.ctx.stroke();
+					
+					this.ctx.restore();
+					
+					this.ctx.beginPath();
+					this.ctx.translate(150, 150);
+					this.ctx.arc(200, 200, 200, 0, Math.PI * 2);
+					this.ctx.fill();
+					this.ctx.stroke();
+
+					this.ctx.beginPath();
+					this.ctx.save()
+					this.ctx.arc(200, 200, 110, 0, Math.PI * 2);	
+					this.ctx.fillStyle = 'rgb(255, 255, 255)';
+					this.ctx.fill();
+					this.ctx.stroke();
+					this.ctx.restore();
+					//var colors = ["#20a2f0", "#fff"];
+					/*for(var i = 0; i < 4; i++) {  					
+						this.ctx.save(); 
+						this.ctx.fillStyle = colors[i%2];                
+						this.ctx.beginPath();  
+						this.ctx.lineWidth = 0;      
+						this.ctx.arc(200, 200, 105, i * Math.PI / 2, i * Math.PI / 2 + Math.PI / 2);        
+						this.ctx.arc(200, 200, 0, i * Math.PI / 2 + Math.PI / 2, i * Math.PI / 2);          
+						this.ctx.fill();
+						this.ctx.stroke();
+						this.ctx.restore();      
+				    } */
+
+					this.ctx.save();
+					this.ctx.beginPath();
+					this.ctx.fillStyle = "blue";
+					this.ctx.moveTo(200, 200);
+					this.ctx.lineTo(300, 200);
+					this.ctx.arc(200, 200, 110, 0, Math.PI / 2);
+					this.ctx.fill();
+					this.ctx.closePath(); //闭合路径
+					this.ctx.stroke();
+					this.ctx.restore();
+
+					this.ctx.save();
+					this.ctx.beginPath();
+					this.ctx.fillStyle = "blue";
+					this.ctx.arc(200, 200, 110, Math.PI, Math.PI * 1.5);
+					this.ctx.arc(200, 200, 0, Math.PI, Math.PI * 1.5);
+					this.ctx.fill();
+					this.ctx.closePath(); //闭合路径
+					this.ctx.stroke();
+					this.ctx.restore();
+
+					this.ctx.save();
+					this.ctx.beginPath();
+					this.ctx.arc(200, 200, 110, Math.PI * 1.5, Math.PI * 2);
+					this.ctx.arc(200, 200, 0, Math.PI * 1.5, Math.PI * 2);
+					this.ctx.fillStyle = "#fff";
+					this.ctx.fill();
+					this.ctx.closePath(); //闭合路径
+					this.ctx.stroke();
+					this.ctx.restore();
+				},
+
+				textNum: function() {
+					var arr = ["B", "M", "W"];
+					this.ctx.translate(200, 200);
+					this.ctx.beginPath();
+					this.ctx.font = "70px Arial";
+					this.ctx.fillStyle = "#fff";
+					this.ctx.textAlign = "center";
+					this.ctx.textBaseline = "middle";
+
+					this.ctx.beginPath();
+                    this.ctx.save();
+					this.ctx.rotate(-45*Math.PI/180);
+					this.ctx.fillText("B",-30,-150);
+					this.ctx.restore();
+					
+					this.ctx.beginPath();
+					this.ctx.fillText("M",0,-150);
+			
+					this.ctx.beginPath();
+					this.ctx.save();
+					this.ctx.rotate(45*Math.PI/180);
+					this.ctx.fillText("W",30,-150);
+
+					this.ctx.restore();
+				}
+			})
+
+			var page = new Page();
+			page.init();
+		</script>
+	</body>
+
+</html>

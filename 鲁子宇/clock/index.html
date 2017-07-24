@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500"></canvas>
+		<script src="clock.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function Page() {
+				this.canvasElem = document.querySelector("#canvas")
+			}
+			Object.assign(Page.prototype, {
+				init: function() {
+					this.canvas = new Clock(this.canvasElem);
+					this.canvas.init()//传一个ID名
+				}
+			})
+			
+			var page = new Page();
+			page.init()
+		</script>
+	</body>
+</html>
