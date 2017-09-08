@@ -6,9 +6,10 @@
 	</head>
 	<body>
 		<canvas id="canvas" width="500" height="500"></canvas>
+		<canvas id="new_canvas" width="500" height="500"></canvas>
 		<script src="clock.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			function Page() {
+			/*function Page() {
 				this.canvasElem = document.querySelector("#canvas")
 			}
 			Object.assign(Page.prototype, {
@@ -19,7 +20,14 @@
 			})
 			
 			var page = new Page();
-			page.init()
+			page.init()*/
+			var canvas = document.getElementById("canvas"),
+				instance = new Canvas(canvas);
+			instance.init();
+			
+			var new_canvas = document.getElementById("new_canvas"),
+				new_instance = new newCanvas(new_canvas);
+			new_instance.init();
 		</script>
 	</body>
 </html>

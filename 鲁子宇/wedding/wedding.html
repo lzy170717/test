@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=640, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="./swiper.css" />
+		<link rel="stylesheet" type="text/css" href="./animate.css" />
+		<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css" />
+		<style type="text/css">
+			.swiper-container {
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				color: #fff;
+			}
+			
+			.index-bg {
+				position: relative;
+				top: 50%;
+				margin-top: -398px;
+			}
+			
+			.index-img {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -179px;
+				margin-top: -70px;
+			}
+			
+			.index-img1 {
+				position: absolute;
+				left: 50%;
+				bottom: 250px;
+				margin-left: -120px;
+			}
+			
+			.index-img2 {
+				position: absolute;
+				left: 50%;
+				bottom: 180px;
+				margin-left: -210px;
+			}
+			
+			.index-img3 {
+				position: absolute;
+				left: 54%;
+				bottom: 32%;
+			}
+			
+			.index-img4,
+			.index-img5 {
+				position: absolute;
+				left: 50%;
+				margin-left: -287px;
+			}
+			
+			.index-img5 {
+				margin-left: -267px;
+				margin-top: 63px;
+			}
+			
+			.index-img6 {
+				position: absolute;
+				left: 50%;
+				bottom: 38%;
+				margin-left: -195px;
+			}
+			
+			.index-img7 {
+				position: absolute;
+				left: 0;
+				top: 23%;
+			}
+			
+			.index-img8 {
+				position: absolute;
+				left: 24%;
+				top: 35%;
+			}
+			
+			.index-img9 {
+				position: absolute;
+				left: 48%;
+				top: 41%;
+				margin-top: -10px;
+			}
+			
+			.index-img10 {
+				position: absolute;
+				left: 68%;
+				top: 47%;
+			}
+			
+			.index-img11 {
+				position: absolute;
+				bottom: 5%;
+			}
+			
+			.index-img12,
+			.index-img13,
+			.index-img14,
+			.index-img15,
+			.index-img16,
+			.index-img17,
+			.index-img18,
+			.index-img19,
+			.index-img20,
+			.index-img21,
+			.index-img22,
+			.index-img23,
+			.index-img24,
+			.index-img25 {
+				position: absolute;
+			}
+			
+			.index-img17 {
+				left: 18%;
+				top: 13%;
+			}
+			
+			.index-img18 {
+				left: 10%;
+				top: 20%;
+			}
+			
+			.index-img19 {
+				right: 10%;
+				top: 20%;
+			}
+			
+			.index-img20 {
+				left: 20%;
+				top: 25%;
+			}
+			
+			.index-img21 {
+				left: 15%;
+				top: 35%;
+				width: 70%;
+			}
+			
+			.index-img22 {
+				left: 24%;
+				bottom: 30%;
+			}
+			
+			.index-img23 {
+				left: 39%;
+				bottom: 25%;
+			}
+			
+			.index-img24 {
+				left: 29%;
+				bottom: 22%;
+			}
+			
+			.index-img25 {
+				left: 40%;
+				top: 15%;
+			}
+			
+			.index-word {
+				font-size: 60px;
+				position: absolute;
+				left: 50%;
+				top: 30%;
+				margin-left: -230px;
+			}
+			
+			.index-word1 {
+				font-size: 40px;
+				position: absolute;
+				left: 50%;
+				bottom: 45%;
+				margin-left: -20px;
+				color: #000;
+				text-align: center;
+			}
+			
+			.index-word2 {
+				font-size: 40px;
+				position: absolute;
+				left: 50%;
+				bottom: 31%;
+				margin-left: -20px;
+				color: #000;
+				text-align: center;
+			}
+			
+			.index-word3 {
+				font-size: 30px;
+				line-height: 40px;
+				position: absolute;
+				top: 55%;
+				left: 8%;
+				bottom: 31%;
+				color: #0c335c;
+				padding: 10px;
+			}
+			
+			.index-word3 p {
+				width: 350px;
+				line-height: 50px;
+				position: absolute;
+				top: 10%;
+				left: 20%;
+			}
+			
+			.index-word4 {
+				position: absolute;
+				bottom: 15%;
+				left: 27%;
+				font-size: 30px;
+				color: #0c335c;
+			}
+			
+			.index-arrow {
+				position: absolute;
+				left: 50%;
+				bottom: 150px;
+				margin-left: -10px;
+			}
+			
+			.first-page,
+			.third-page {
+				background: url(http://www.yaoyue365.com/Uploads/syspic/scene/20160413144446896_real.jpg) no-repeat;
+				background-size: cover;
+			}
+			
+			.second-page {
+				background: url(./imgs/20160413144422571_real.jpg) no-repeat;
+				opacity: 0.8;
+			}
+			
+			.third-page {
+				margin-top: 0;
+			}
+			
+			.forth-page {
+				background: url(http://www.yaoyue365.com/Uploads/syspic/scene/083526ScIdevNJ.jpg) no-repeat;
+			}
+			
+			.seventh-page {
+				background: url(http://www.yaoyue365.com/Uploads/syspic/scene/20160413162134338_real.jpg) no-repeat;
+			}
+			
+			.eighth-page {
+				background: url(http://www.yaoyue365.com/Uploads/syspic/scene/20160413170733202_real.jpg) no-repeat;
+			}
+			
+			.music {
+				position: absolute;
+				z-index: 20;
+				right: 10%;
+				top: 5%;
+			}
+			
+			#music1 {
+				display: none;
+			}
+			
+			#audio {
+				display: none;
+			}
+			
+			#container {
+				width: 80%;
+				height: 300px;
+				margin: 300px auto;
+			}
+		</style>
+
+		<body>
+			<div class="swiper-container ">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide first-page">
+						<img class="ani index-img3" swiper-animate-effect="rotateIn" swiper-animate-duration="1s" swiper-animate-delay="0s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413143537335_real.png" />
+						<img src="http://www.yaoyue365.com/Uploads/syspic/scene/20160525160121212_real.jpg" />
+						<div class="ani index-word" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s">2016年07月30日</div>
+						<img class="ani index-img" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="1s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413140116403_real.png" />
+						<img class="ani index-img1" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413140606938_real.png" />
+						<img class="ani index-img2" swiper-animate-effect="flipInY" swiper-animate-duration="1.5s" swiper-animate-delay="1.3s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413140606434_real.png" />
+						<img class="ani index-arrow infinite" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="2.1s" src="imgs/arrow-up-blue.png" />
+					</div>
+
+					<div class="swiper-slide second-page">
+						<img class="ani index-img4" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.3s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413144858476_real.png" />
+						<img class="ani index-img5" swiper-animate-effect="fadeIn" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413144858663_real.png" />
+
+						<div class="ani index-word1" swiper-animate-effect="fadeInLeftBig" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s">王子</div>
+						<img class="ani index-img6" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.3s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413145438208_real.png" />
+						<div class="ani index-word2" swiper-animate-effect="fadeInRightBig" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s">公主</div>
+						<img class="ani index-arrow infinite" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="2.1s" src="imgs/arrow-up-blue.png" />
+
+					</div>
+					<div class="swiper-slide third-page">
+						<img src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413151514446_real.jpg"/>
+						<img class="ani index-img7" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160727172346435_real.png" />
+						<img class="ani index-img8" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413151537943_real.png" />
+						<img class="ani index-img9" swiper-animate-effect="bounceInDown" swiper-animate-duration="1.5s" swiper-animate-delay="1s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413151537507_real.png" />
+						<img class="ani index-img10" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413151537858_real.png" />
+						<div class="ani index-word3" swiper-animate-effect="fadeIn" swiper-animate-duration="1.5s" swiper-animate-delay="1s">
+							<img src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413151537757_real.png"/><p>将于2016年07月30日11:30举行结婚典礼敬备宴席，届时恭请您及家人光临</p>
+						</div>
+						<div class="ani index-word4" swiper-animate-effect="fadeIn" swiper-animate-duration="1.5s" swiper-animate-delay="1s">地址：XXXXXXXXXXXXX</div>
+						<img class="ani index-img11" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160727172346131_real.png" />
+						<img class="ani index-arrow infinite" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="2.1s" src="imgs/arrow-up-blue.png" />
+					</div>
+					<div class="swiper-slide forth-page">				
+						<img class="ani index-img13" swiper-animate-effect="fadeOutRight" swiper-animate-duration="1s" swiper-animate-delay="3s" src="http://www.yaoyue365.com/Uploads/syspic/scene/083523nuEZWSVC.jpg" />	
+							<img class="ani index-img12" swiper-animate-effect="fadeOutRight" swiper-animate-duration="1s" swiper-animate-delay="2s" src="http://www.yaoyue365.com/Uploads/syspic/scene/083523DYvZbwxO.jpg" />
+							<img class="ani index-arrow infinite" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="2.1s" src="imgs/arrow-up-blue.png" />
+					</div>
+					<div class="swiper-slide fifth-page">				
+						<img class="ani index-img14" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.5s" src="http://www.yaoyue365.com/Uploads/syspic/scene/083523nuEZWSVC.jpg" />	
+							<img class="ani index-img15" swiper-animate-effect="zoomIn" swiper-animate-duration="2s" swiper-animate-delay="2s" src="http://www.yaoyue365.com/Uploads/syspic/scene/083522nfKtFCjy.jpg" />
+							<img class="ani index-arrow infinite" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="2.1s" src="imgs/arrow-up-blue.png" />
+					</div>
+					<div class="swiper-slide sixth-page">				
+						<img class="ani index-img16" swiper-animate-effect="zoomIn" swiper-animate-duration="3s" swiper-animate-delay="0.5s" src="http://www.yaoyue365.com/Uploads/syspic/scene/083521sgYunOVN.jpg" />
+						<img class="ani index-img16" swiper-animate-effect="zoomOut" swiper-animate-duration="5s" swiper-animate-delay="1s" src="http://www.yaoyue365.com/Uploads/syspic/scene/083521sgYunOVN.jpg" />
+						<img class="ani index-arrow infinite" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="2.1s" src="imgs/arrow-up-blue.png" />
+					</div>
+					<div class="swiper-slide seventh-page">				
+						<img class="ani index-img17" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="2s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413162526539_real.png" />
+						<img class="ani index-img18" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.5s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413162526422_real.png" />
+						<img class="ani index-img19" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.5s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413162526754_real.png" />
+						<img class="ani index-img20" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="2.5s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413162526237_real.png" />
+						<img class="ani index-img21" swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="3.5s" src="http://www.yaoyue365.com/Uploads/syspic/scene/083517sfDqgxyC.jpg" />
+						<img class="ani index-img22" swiper-animate-effect="fadeIn" swiper-animate-duration="1.5s" swiper-animate-delay="3s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413162526987_real.png" />
+						<img class="ani index-img23" swiper-animate-effect="fadeIn" swiper-animate-duration="1.5s" swiper-animate-delay="3s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413162527959_real.png" />
+						<img class="ani index-img24" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="3.5s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413162527222_real.png" />
+						<img class="ani index-arrow infinite" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="2.1s" src="imgs/arrow-up-blue.png" />
+					</div>
+					<div class="swiper-slide eighth-page">
+						<img class="ani index-img25" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.5s" src="http://www.yaoyue365.com/Uploads/syspic/scene/20160413164141352_real.png" />
+						<div id="container" tabindex="0"></div>
+					</div>
+				</div>
+			</div>
+			<audio src="jj.mp3" id="audio" class='audio' controls></audio>
+			<img src="http://www.yaoyue365.com/view/images/normalmusic.svg" id="music" class='music' />
+			<img src="http://www.yaoyue365.com/view/images/normalmusic.svg" id="music1" class='music' />
+			<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+			<script src="./swiper.js" type="text/javascript" charset="utf-8"></script>
+			<script src="./swiper-animate.js" type="text/javascript" charset="utf-8"></script>
+			<script src="http://webapi.amap.com/maps?v=1.3&key=30b7e8df1678775a3346cdfcde12cb8b"></script>
+			<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+			<script>
+				var mySwiper = new Swiper('.swiper-container', {
+					direction: "vertical",
+					onInit: function(swiper) { //Swiper2.x的初始化是onFirstInit
+						swiperAnimateCache(swiper); //隐藏动画元素 
+						swiperAnimate(swiper); //初始化完成开始动画
+					},
+					onSlideChangeEnd: function(swiper) {
+						swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+					}
+				})
+
+				$("#music").click(function() {
+					$("#audio")[0].play()
+					$("#music1").css('display', 'block')
+					$("#music").css('display', 'none')
+				})
+				$("#music1").click(function() {
+					$("#audio")[0].pause()
+					$("#music1").css('display', 'none')
+					$("#music").css('display', 'block')
+				})
+
+				//地图
+				var map = new AMap.Map('container', {
+					zoom: 10,
+					resizeEnable: true
+				});
+				 
+				var marker = new AMap.Marker({
+					position: [116.480983, 39.989628]
+				});
+				marker.setMap(map);
+				AMap.plugin(['AMap.ToolBar', 'AMap.Scale'], function() {
+					var toolBar = new AMap.ToolBar();
+					var scale = new AMap.Scale();
+					map.addControl(toolBar);
+					map.addControl(scale);
+				})
+			</script>
+		</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				font-size: 16px;
+				list-style: none;
+			}
+			
+			.box {
+				width: 350px;
+				margin: 0 auto;
+			}
+			
+			.box p {
+				background: tan;
+				width: 330px;
+				height: 575px;
+				padding: 10px;
+				line-height: 25px;
+				overflow-y: scroll;
+			}
+			
+			.box .fontSize {
+				margin-top: 5px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			
+			.box .leftBtn,
+			.box .rightBtn {
+				width: 50px;
+				height: 50px;
+				cursor: pointer;
+			}
+			
+			.box #text {
+				width: 40px;
+				height: 40px;
+				text-align: center;
+				font-size: 20px;
+			}
+			
+			.box ul {
+				display: flex;
+				justify-content: space-between;
+				margin-top: 5px;
+			}
+			
+			.box ul li {
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				cursor: pointer;
+			}
+			
+			.box ul li:nth-of-type(1) {
+				background: thistle;
+			}
+			
+			.box ul li:nth-of-type(2) {
+				background: tomato;
+			}
+			
+			.box ul li:nth-of-type(3) {
+				background: wheat;
+			}
+			
+			.box ul li:nth-of-type(4) {
+				background: darkgreen;
+			}
+			
+			.box ul li:nth-of-type(5) {
+				background: gray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<p>这平铺着，厚积着的绿，着实可爱。她松松的皱缬着，像少妇拖着的裙幅；她轻轻的摆弄着，像跳动的初恋的处女的心；她滑滑的明亮着，像涂了“明油”一般，有鸡蛋清那样软，那样嫩，令人想着所曾触过的最嫩的皮肤；她又不杂些儿法滓，宛然一块温润的碧玉，只清清的一色－－但你却看不透她！我曾见过北京什刹海指地的绿杨，脱不了鹅黄的底子，似乎太淡了。我又曾见过杭州虎跑寺旁高峻而深密的“绿壁”，重叠着无穷的碧草与绿叶的，那又似乎太浓了。其余呢，西湖的波太明了，秦淮河的又太暗了。可爱的，我将什么来比拟你呢？我怎么比拟得出呢？大约潭是很深的、故能蕴蓄着这样奇异的绿；仿佛蔚蓝的天融了一块在里面似的，这才这般的鲜润呀。－－那醉人的绿呀！我若能裁你以为带，我将赠给那轻盈的舞女；她必能临风飘举了。我若能挹你以为眼，我将赠给那善歌的盲妹；她必明眸善睐了。我舍不得你；我怎舍得你呢？我用手拍着你，抚摩着你，如同一个十二三岁的小姑娘。我又掬你入口，便是吻着她了。我送你一个名字，我从此叫你“女儿绿”，好么？
+			</p>
+			<div class="fontSize">
+				<button class="leftBtn">A+</button>
+				<input type="text" id="text" value="16" disabled/>
+				<button class="rightBtn">A-</button>
+			</div>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+
+		</div>
+		<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function Page() {
+				this.leftBtn = $(".leftBtn");
+				this.rightBtn = $(".rightBtn");
+				this.fontVal = Number($("#text").val())
+				this.text = $("#text");
+				this.ul = $('ul');
+				this.p = $("p")
+			}
+			$.extend(Page.prototype, {
+
+				init: function() {
+					this.bindEvents();
+					this.resetForData()
+				},
+
+				bindEvents: function() {
+					this.leftBtn.on("click", $.proxy(this.handleLeftBtn, this))
+					this.rightBtn.on("click", $.proxy(this.handleRightBtn, this))
+					this.ul.on("click", "li",$.proxy(this.handleUl, this))
+				},
+
+				resetForData: function() {
+					try {
+						if(localStorage.fontVal) {
+							this.text.val(localStorage.fontVal)
+							this.p.css("fontSize", localStorage.fontVal + 'px')
+						}
+						if(localStorage.color) {
+							this.p.css("backgroundColor", localStorage.color)
+						}
+					} catch(e) {}
+				},
+
+				handleLeftBtn: function() {
+
+					//var fontVal = this.text.val()
+					try {
+
+						if(localStorage.fontVal) {
+							if(localStorage.fontVal < 30){
+								localStorage.fontVal = Number(localStorage.fontVal) + 2
+								this.p.css("fontSize", Number(localStorage.fontVal) + 'px')
+								this.text.val(Number(localStorage.fontVal))
+							}else {
+								this.text.val(30)
+								this.p.css("fontSize", '30px')
+							}
+							
+						} else {
+							if(this.fontVal < 30) {
+								this.fontVal += 2;
+								this.text.val(this.fontVal)
+								this.p.css("fontSize", this.fontVal + 'px')
+							} else {
+								this.text[0].value = 30
+								this.p.css("fontSize", '30px')
+							}
+
+							window.localStorage.fontVal = this.fontVal
+						}
+
+					} catch(e) {}
+
+				},
+
+				handleRightBtn: function() {
+					//var fontVal = this.text.val()
+					try {
+						if(localStorage.fontVal) {						
+							//console.log(localStorage.fontVal)							
+							if(localStorage.fontVal > 12) {
+								localStorage.fontVal = Number(localStorage.fontVal) - 2
+								this.p.css("fontSize", Number(localStorage.fontVal) + 'px')
+								this.text.val(Number(localStorage.fontVal))
+							} else {
+								this.text.val(12)
+								this.p.css("fontSize", '12px')
+							}
+						} else {							
+							if(this.fontVal > 12) {
+								this.fontVal -= 2
+								this.text.val(this.fontVal)
+								this.p.css("fontSize", this.fontVal + 'px')
+							} else if(this.fontVal <= 12) {
+								this.text[0].value = 12
+								this.p.css("fontSize", '12px')
+							}
+
+							window.localStorage.fontVal = this.fontVal
+
+						}
+
+					} catch(e) {}
+				},
+				
+				handleUl: function(e) {
+					var color = $(e.target).css("backgroundColor")
+					//console.log($(e.target).css("backgroundColor"))
+					try{
+						 
+						this.p.css("backgroundColor",$(e.target).css("backgroundColor"))
+
+						window.localStorage.color = color
+					}catch(e){}
+					
+				}
+			})
+
+			var page = new Page()
+			page.init()
+		</script>
+	</body>
+
+</html>
